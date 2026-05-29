@@ -1,0 +1,345 @@
+/* ═══════════════════════════════════════════
+   Hero entrance animations
+   ═══════════════════════════════════════════ */
+
+/* Slide in from left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade up */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Float loop for phone mockup */
+@keyframes floatPhone {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Float loop for Cloud badge */
+@keyframes floatCloud {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-8px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Float loop for API badge */
+@keyframes floatApi {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-14px) rotate(-1.5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Float loop for AI badge (with base rotation of -30.14deg) */
+@keyframes floatAi {
+  0%   { transform: translateY(0px) rotate(-30.14deg); }
+  50%  { transform: translateY(-10px) rotate(-30.14deg); }
+  100% { transform: translateY(0px) rotate(-30.14deg); }
+}
+
+/* Float loop for UI badge */
+@keyframes floatUi {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-13px) rotate(1.5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* ── Applied classes ── */
+
+.heroSection {
+  /* Solid #B2CDFF up to ~60% (above Contact Us), then fades to white */
+  background: linear-gradient(180deg, #B2CDFF 0%, #B2CDFF 55%, #FFFFFF 100%);
+  min-height: 100vh;
+}
+
+/* Parent grid wrapper */
+.mainRow {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 1200px) {
+  .mainRow {
+    width: 1380px;
+    height: 568px;
+    display: block;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .mainRow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    gap: 60px;
+  }
+}
+
+/* Left column – text & statistics */
+.leftContent {
+  animation: slideInLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@media (min-width: 1200px) {
+  .leftContent {
+    position: absolute;
+    width: 702px;
+    height: 568px;
+    left: 87px;
+    top: 11px; /* maintains the 186px - 175px = 11px vertical offset relative to rightContent's 0px */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .leftContent {
+    width: 100%;
+    max-width: 702px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.heading {
+  animation: slideInLeft 0.9s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1);
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 1200px) {
+  .heading {
+    width: 528px;
+    height: 96px;
+    text-align: left;
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .heading {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 32px;
+  }
+}
+
+.description {
+  animation: slideInLeft 0.9s 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: rgba(81, 81, 81, 1);
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+@media (min-width: 1200px) {
+  .description {
+    width: 680px;
+    height: 126px;
+    text-align: left;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .description {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+.actionRow {
+  width: 100%;
+  margin-top:40px;
+  margin-bottom: 49px;
+  display: flex;
+}
+
+@media (min-width: 1200px) {
+  .actionRow {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .actionRow {
+    justify-content: center;
+  }
+}
+
+.ctaButton {
+  animation: fadeUp 0.8s 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  background-color: rgba(10, 80, 165, 1);
+  color: white !important;
+  border-radius: 36px;
+  width: 155px;
+  height: 45px;
+  padding: 13px 25px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(10, 80, 165, 0.4);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  text-decoration: none;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(10, 80, 165, 0.6);
+  opacity: 0.95;
+  color: white !important;
+}
+
+.statsWrapper {
+  width: 100%;
+  max-width: 890px;
+
+}
+
+/* Right column – slide in from right */
+.rightContent {
+  animation: slideInRight 0.9s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@media (min-width: 1200px) {
+  .rightContent {
+    position: absolute;
+    width: 509px;
+    height: 568px;
+    left: 870px;
+    top: 0px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .rightContent {
+    width: 100%;
+    max-width: 509px;
+    height: auto;
+    aspect-ratio: 509 / 568;
+  }
+}
+
+/* Phone image - fluid absolute layout */
+.phoneImage {
+  position: absolute;
+  width: 70.3%;
+  left: 10.8%;
+  top: 1.7%;
+  z-index: 3;
+  animation: floatPhone 6s ease-in-out infinite;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: drop-shadow(0 20px 50px rgba(0, 0, 80, 0.15));
+}
+
+.phoneImage:hover {
+  transform: scale(1.03) translateY(-4px);
+  filter: drop-shadow(0 25px 60px rgba(0, 0, 80, 0.22));
+}
+
+/* Visual container holding phone and floating badges */
+.visualContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Floating icon badges */
+.badge {
+  position: absolute;
+  z-index: 5;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 100, 0.12));
+}
+
+.badge:hover {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 100, 0.22));
+  cursor: pointer;
+}
+
+.badgeCloud {
+  width: 17.8%;
+  height: auto;
+  left: 11.2%;
+  top: 0%;
+  animation: floatCloud 4.5s ease-in-out infinite;
+}
+
+.badgeApi {
+  width: 26.5%;
+  height: auto;
+  left: 0%;
+  top: 52.4%;
+  animation: floatApi 4.8s ease-in-out infinite;
+}
+
+.badgeAi {
+  width: 16.9%;
+  height: auto;
+  left: 76.8%;
+  top: 13%;
+  transform: rotate(-30.14deg);
+  animation: floatAi 4.2s ease-in-out infinite;
+}
+
+.badgeAi:hover {
+  transform: scale(1.1) rotate(-25deg);
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 100, 0.22));
+  cursor: pointer;
+}
+
+.badgeUi {
+  width: 30.4%;
+  height: auto;
+  left: 68.6%;
+  top: 47.2%;
+  animation: floatUi 5.2s ease-in-out infinite;
+}
